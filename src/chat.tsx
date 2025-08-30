@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, Bot, User, Heart, Brain, Trash2, Moon, Sun, Palette, X } from 'lucide-react';
+import PWAInstaller from './components/PWAInstaller';
+import OfflineIndicator from './components/OfflineIndicator';
 
 interface Message {
   id: number;
@@ -537,6 +539,10 @@ Respond as a caring psychology assistant. If the user is speaking Hindi/Punjabi,
            </div>
          </div>
        )}
+       
+       {/* PWA Components */}
+       <PWAInstaller isDarkMode={isDarkMode} />
+       <OfflineIndicator isDarkMode={isDarkMode} />
      </div>
    );
  };

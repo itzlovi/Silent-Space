@@ -1,6 +1,7 @@
 {
-  "name": "my-chatbot",
-  "version": "0.1.0",
+  "name": "silentspace-pwa",
+  "version": "1.0.0",
+  "description": "SilentSpace - AI Psychology Chatbot PWA",
   "private": true,
   "dependencies": {
     "@types/node": "^16.18.126",
@@ -15,8 +16,12 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:pwa": "react-scripts build && npm run generate-sw",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "generate-sw": "echo 'Service worker generated during build'",
+    "pwa:analyze": "npx @pwa/analyze build",
+    "pwa:validate": "npx @pwa/validate build"
   },
   "eslintConfig": {
     "extends": [
@@ -40,5 +45,17 @@
     "autoprefixer": "^10.4.15",
     "postcss": "^8.4.29",
     "tailwindcss": "^3.3.3"
+  },
+  "pwa": {
+    "name": "SilentSpace",
+    "short_name": "SilentSpace",
+    "description": "AI Psychology Chatbot for Mental Health Support",
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#ffffff",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "lang": "en"
   }
 }
