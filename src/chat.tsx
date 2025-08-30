@@ -380,50 +380,49 @@ Respond as a caring psychology assistant. If the user is speaking Hindi/Punjabi,
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Input Area */}
-             <div className={`border-t transition-colors duration-300 ${
-         isDarkMode 
-           ? 'border-gray-700' 
-           : 'border-gray-200'
-       } p-2 sm:p-4`} style={{ backgroundColor: isDarkMode ? customColors.headerBg : '#ffffff' }}>
-        <div className="flex space-x-2 sm:space-x-4">
-          <div className="flex-1">
-            <textarea
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyPress={handleKeyPress}
-              placeholder="type......"
-                             className={`w-full px-3 sm:px-4 py-2 sm:py-3 border rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent resize-none transition-colors duration-300 text-sm sm:text-base ${
+                    {/* Input Area */}
+              <div className={`border-t transition-colors duration-300 ${
+          isDarkMode 
+            ? 'border-gray-700' 
+            : 'border-gray-200'
+        } p-3 sm:p-4`} style={{ backgroundColor: isDarkMode ? customColors.headerBg : '#ffffff' }}>
+                  <div className="relative">
+           <div className="relative">
+             <textarea
+               value={input}
+               onChange={(e) => setInput(e.target.value)}
+               onKeyPress={handleKeyPress}
+               placeholder="Write a message here..."
+                              className={`w-full px-4 sm:px-5 pr-16 sm:pr-20 py-2 sm:py-2.5 border-2 rounded-2xl focus:ring-2 focus:ring-opacity-30 focus:border-transparent resize-none transition-all duration-300 text-sm sm:text-base ${
+                    isDarkMode 
+                      ? 'border-gray-600 text-white placeholder-gray-400 focus:ring-gray-500' 
+                      : 'border-gray-300 focus:ring-gray-400'
+                  }`}
+                style={{ backgroundColor: isDarkMode ? customColors.inputBg : '#ffffff' }}
+               rows={1}
+               disabled={isLoading}
+             />
+                      <button
+               onClick={sendMessage}
+               disabled={!input.trim() || isLoading}
+                            className={`absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex items-center justify-center text-sm sm:text-base font-medium shadow-lg ${
                  isDarkMode 
-                   ? 'border-gray-600 text-white placeholder-gray-400' 
-                   : 'border-gray-300'
+                   ? 'text-white hover:bg-opacity-80' 
+                   : 'text-white hover:bg-opacity-80'
                }`}
-               style={{ backgroundColor: isDarkMode ? customColors.inputBg : '#ffffff' }}
-              rows={2}
-              disabled={isLoading}
-            />
-          </div>
-                     <button
-             onClick={sendMessage}
-             disabled={!input.trim() || isLoading}
-                          className={`px-3 sm:px-6 py-2 sm:py-3 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 flex items-center space-x-1 sm:space-x-2 text-sm sm:text-base ${
-                isDarkMode 
-                  ? 'text-white hover:bg-gray-200' 
-                  : 'text-white hover:bg-gray-800'
-              }`}
               style={{ backgroundColor: customColors.sendButtonBg }}
-           >
-             <Send className="h-3 w-3 sm:h-4 sm:w-4" />
-             <span className="hidden sm:inline">Send</span>
-           </button>
-        </div>
+            >
+              <Send className="h-3 w-3 sm:h-4 sm:w-4" />
+            </button>
+           </div>
+         </div>
 
-                 {/* Privacy Notice */}
-         <div className={`mt-2 sm:mt-3 text-xs text-center transition-colors duration-300 px-2 ${
-           isDarkMode ? 'text-gray-400' : 'text-gray-500'
-         }`}>
-           🔒 Your conversations are private and secure. For serious mental health concerns, please consult a professional.
-                  </div>
+                                   {/* Privacy Notice */}
+          <div className={`mt-3 sm:mt-4 text-xs text-center transition-colors duration-300 px-3 ${
+            isDarkMode ? 'text-gray-400' : 'text-gray-500'
+          }`}>
+            🔒 Your conversations are private and secure. For serious mental health concerns, please consult a professional.
+                   </div>
        </div>
 
                {/* Color Picker Panel */}
