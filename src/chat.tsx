@@ -230,120 +230,120 @@ Respond as a caring psychology assistant. If the user is speaking Hindi/Punjabi,
          ? 'bg-black' 
          : 'bg-white'
      }`}>
-      {/* Header */}
-             <div className={`shadow-lg border-b transition-colors duration-300 ${
-         isDarkMode 
-           ? `border-gray-700` 
-           : 'border-gray-200'
-       } p-4`} style={{ backgroundColor: isDarkMode ? customColors.headerBg : '#ffffff' }}>
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-                         <div className="flex items-center space-x-2">
-               <Brain className={`h-8 w-8 ${isDarkMode ? 'text-white' : 'text-black'}`} />
-               <Heart className={`h-6 w-6 ${isDarkMode ? 'text-white' : 'text-black'}`} />
+             {/* Header */}
+              <div className={`shadow-lg border-b transition-colors duration-300 ${
+          isDarkMode 
+            ? `border-gray-700` 
+            : 'border-gray-200'
+        } p-3 sm:p-4`} style={{ backgroundColor: isDarkMode ? customColors.headerBg : '#ffffff' }}>
+         <div className="flex items-center justify-between">
+           <div className="flex items-center space-x-2 sm:space-x-3">
+                          <div className="flex items-center space-x-1 sm:space-x-2">
+                <Brain className={`h-6 w-6 sm:h-8 sm:w-8 ${isDarkMode ? 'text-white' : 'text-black'}`} />
+                <Heart className={`h-4 w-4 sm:h-6 sm:w-6 ${isDarkMode ? 'text-white' : 'text-black'}`} />
+              </div>
+             <div>
+               <h1 className={`text-lg sm:text-xl md:text-2xl font-bold transition-colors duration-300 ${
+                 isDarkMode ? 'text-white' : 'text-gray-800'
+               }`}>SilentSpace</h1>
              </div>
-            <div>
-              <h1 className={`text-2xl font-bold transition-colors duration-300 ${
-                isDarkMode ? 'text-white' : 'text-gray-800'
-              }`}>SilentSpace</h1>
-            </div>
-          </div>
-          <div className="flex items-center space-x-3">
-            <button
-              onClick={toggleTheme}
-                             className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-colors duration-200 ${
-                 isDarkMode 
-                   ? 'bg-gray-700 hover:bg-gray-600 text-white' 
-                   : 'bg-gray-100 hover:bg-gray-200 text-black'
-               }`}
-            >
-              {isDarkMode ? (
-                <>
-                  <Sun className="h-4 w-4" />
-                  <span>Light</span>
-                </>
-              ) : (
-                <>
-                  <Moon className="h-4 w-4" />
-                  <span>Dark</span>
-                </>
-              )}
-            </button>
+           </div>
+           <div className="flex items-center space-x-1 sm:space-x-2 md:space-x-3">
                          <button
-               onClick={() => setShowColorPicker(!showColorPicker)}
-               className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-colors duration-200 ${
-                 isDarkMode 
-                   ? 'bg-gray-700 hover:bg-gray-600 text-white' 
-                   : 'bg-gray-100 hover:bg-gray-200 text-black'
-               }`}
+               onClick={toggleTheme}
+                              className={`flex items-center space-x-1 sm:space-x-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg transition-colors duration-200 text-xs sm:text-sm ${
+                  isDarkMode 
+                    ? 'bg-gray-700 hover:bg-gray-600 text-white' 
+                    : 'bg-gray-100 hover:bg-gray-200 text-black'
+                }`}
              >
-               <Palette className="h-4 w-4" />
-               <span>Colors</span>
+               {isDarkMode ? (
+                 <>
+                   <Sun className="h-3 w-3 sm:h-4 sm:w-4" />
+                   <span className="hidden sm:inline">Light</span>
+                 </>
+               ) : (
+                 <>
+                   <Moon className="h-3 w-3 sm:h-4 sm:w-4" />
+                   <span className="hidden sm:inline">Dark</span>
+                 </>
+               )}
              </button>
-             <button
-               onClick={clearChat}
-               className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors duration-200 ${
-                 isDarkMode 
-                   ? 'bg-gray-700 hover:bg-gray-600 text-white' 
-                   : 'bg-gray-100 hover:bg-gray-200 text-black'
-               }`}
-             >
-               <Trash2 className="h-4 w-4" />
-               <span>Clear Chat</span>
-             </button>
+                          <button
+                onClick={() => setShowColorPicker(!showColorPicker)}
+                className={`flex items-center space-x-1 sm:space-x-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg transition-colors duration-200 text-xs sm:text-sm ${
+                  isDarkMode 
+                    ? 'bg-gray-700 hover:bg-gray-600 text-white' 
+                    : 'bg-gray-100 hover:bg-gray-200 text-black'
+                }`}
+              >
+                <Palette className="h-3 w-3 sm:h-4 sm:w-4" />
+                <span className="hidden sm:inline">Colors</span>
+              </button>
+              <button
+                onClick={clearChat}
+                className={`flex items-center space-x-1 sm:space-x-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg transition-colors duration-200 text-xs sm:text-sm ${
+                  isDarkMode 
+                    ? 'bg-gray-700 hover:bg-gray-600 text-white' 
+                    : 'bg-gray-100 hover:bg-gray-200 text-black'
+                }`}
+              >
+                <Trash2 className="h-3 w-3 sm:h-4 sm:w-4" />
+                <span className="hidden sm:inline">Clear Chat</span>
+              </button>
           </div>
         </div>
       </div>
 
-      {/* Messages Container */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4">
+             {/* Messages Container */}
+       <div className="flex-1 overflow-y-auto p-2 sm:p-4 space-y-3 sm:space-y-4">
         {messages.map((message) => (
           <div
             key={message.id}
             className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
           >
-            <div
-              className={`flex items-start space-x-3 max-w-3xl ${
-                message.sender === 'user' ? 'flex-row-reverse space-x-reverse' : ''
-              }`}
-            >
-                             <div
-                 className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${
-                   message.sender === 'user'
-                     ? 'text-white'
-                     : isDarkMode ? 'text-black' : 'text-white'
-                 }`}
-                 style={{ backgroundColor: message.sender === 'user' ? customColors.userAvatarBg : customColors.botAvatarBg }}
-               >
-                {message.sender === 'user' ? (
-                  <User className="h-4 w-4" />
-                ) : (
-                  <Bot className="h-4 w-4" />
-                )}
-              </div>
-                             <div
-                 className={`px-4 py-3 rounded-lg transition-colors duration-300 ${
-                   message.sender === 'user'
-                     ? 'text-white rounded-br-none shadow-lg'
-                     : isDarkMode 
-                       ? 'text-white rounded-bl-none shadow-lg' 
-                       : 'text-black rounded-bl-none border border-gray-200 shadow-sm'
-                 }`}
-                 style={{ backgroundColor: message.sender === 'user' ? customColors.userMessageBg : customColors.botMessageBg }}
-               >
-                <p className="whitespace-pre-wrap leading-relaxed">{message.text}</p>
-                                 <p className={`text-xs mt-2 transition-colors duration-300 ${
-                   message.sender === 'user' 
-                     ? 'opacity-70' 
-                     : isDarkMode ? 'text-gray-400' : 'text-gray-600'
-                 }`}>
-                  {message.timestamp.toLocaleTimeString('en-IN', { 
-                    hour: '2-digit', 
-                    minute: '2-digit' 
-                  })}
-                </p>
-              </div>
-            </div>
+                         <div
+               className={`flex items-start space-x-2 sm:space-x-3 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl ${
+                 message.sender === 'user' ? 'flex-row-reverse space-x-reverse' : ''
+               }`}
+             >
+                              <div
+                  className={`flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center ${
+                    message.sender === 'user'
+                      ? 'text-white'
+                      : isDarkMode ? 'text-black' : 'text-white'
+                  }`}
+                  style={{ backgroundColor: message.sender === 'user' ? customColors.userAvatarBg : customColors.botAvatarBg }}
+                >
+                 {message.sender === 'user' ? (
+                   <User className="h-3 w-3 sm:h-4 sm:w-4" />
+                 ) : (
+                   <Bot className="h-3 w-3 sm:h-4 sm:w-4" />
+                 )}
+               </div>
+                              <div
+                  className={`px-3 py-2 sm:px-4 sm:py-3 rounded-lg transition-colors duration-300 ${
+                    message.sender === 'user'
+                      ? 'text-white rounded-br-none shadow-lg'
+                      : isDarkMode 
+                        ? 'text-white rounded-bl-none shadow-lg' 
+                        : 'text-black rounded-bl-none border border-gray-200 shadow-sm'
+                  }`}
+                  style={{ backgroundColor: message.sender === 'user' ? customColors.userMessageBg : customColors.botMessageBg }}
+                >
+                 <p className="whitespace-pre-wrap leading-relaxed text-sm sm:text-base">{message.text}</p>
+                                  <p className={`text-xs mt-2 transition-colors duration-300 ${
+                    message.sender === 'user' 
+                      ? 'opacity-70' 
+                      : isDarkMode ? 'text-gray-400' : 'text-gray-600'
+                  }`}>
+                   {message.timestamp.toLocaleTimeString('en-IN', { 
+                     hour: '2-digit', 
+                     minute: '2-digit' 
+                   })}
+                 </p>
+               </div>
+             </div>
           </div>
         ))}
         
@@ -383,15 +383,15 @@ Respond as a caring psychology assistant. If the user is speaking Hindi/Punjabi,
          isDarkMode 
            ? 'border-gray-700' 
            : 'border-gray-200'
-       } p-4`} style={{ backgroundColor: isDarkMode ? customColors.headerBg : '#ffffff' }}>
-        <div className="flex space-x-4">
+       } p-2 sm:p-4`} style={{ backgroundColor: isDarkMode ? customColors.headerBg : '#ffffff' }}>
+        <div className="flex space-x-2 sm:space-x-4">
           <div className="flex-1">
             <textarea
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={handleKeyPress}
               placeholder="type......"
-                             className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent resize-none transition-colors duration-300 ${
+                             className={`w-full px-3 sm:px-4 py-2 sm:py-3 border rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent resize-none transition-colors duration-300 text-sm sm:text-base ${
                  isDarkMode 
                    ? 'border-gray-600 text-white placeholder-gray-400' 
                    : 'border-gray-300'
@@ -404,34 +404,34 @@ Respond as a caring psychology assistant. If the user is speaking Hindi/Punjabi,
                      <button
              onClick={sendMessage}
              disabled={!input.trim() || isLoading}
-                          className={`px-6 py-3 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 flex items-center space-x-2 ${
+                          className={`px-3 sm:px-6 py-2 sm:py-3 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 flex items-center space-x-1 sm:space-x-2 text-sm sm:text-base ${
                 isDarkMode 
                   ? 'text-white hover:bg-gray-200' 
                   : 'text-white hover:bg-gray-800'
               }`}
               style={{ backgroundColor: customColors.sendButtonBg }}
            >
-             <Send className="h-4 w-4" />
-             <span>Send</span>
+             <Send className="h-3 w-3 sm:h-4 sm:w-4" />
+             <span className="hidden sm:inline">Send</span>
            </button>
         </div>
 
-        {/* Privacy Notice */}
-        <div className={`mt-3 text-xs text-center transition-colors duration-300 ${
-          isDarkMode ? 'text-gray-400' : 'text-gray-500'
-        }`}>
-          🔒 Your conversations are private and secure. For serious mental health concerns, please consult a professional.
-                 </div>
+                 {/* Privacy Notice */}
+         <div className={`mt-2 sm:mt-3 text-xs text-center transition-colors duration-300 px-2 ${
+           isDarkMode ? 'text-gray-400' : 'text-gray-500'
+         }`}>
+           🔒 Your conversations are private and secure. For serious mental health concerns, please consult a professional.
+                  </div>
        </div>
 
-       {/* Color Picker Panel */}
-       {showColorPicker && (
-         <div className={`fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50`}>
-           <div className={`p-6 rounded-lg shadow-xl max-w-md w-full mx-4 ${
-             isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'
-           }`}>
-             <div className="flex items-center justify-between mb-4">
-               <h3 className="text-lg font-semibold">Customize Colors</h3>
+               {/* Color Picker Panel */}
+        {showColorPicker && (
+          <div className={`fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-2`}>
+            <div className={`p-4 sm:p-6 rounded-lg shadow-xl max-w-sm sm:max-w-md w-full mx-2 sm:mx-4 ${
+              isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'
+            }`}>
+                           <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <h3 className="text-base sm:text-lg font-semibold">Customize Colors</h3>
                <button
                  onClick={() => setShowColorPicker(false)}
                  className="p-1 hover:bg-gray-200 rounded"
@@ -440,99 +440,99 @@ Respond as a caring psychology assistant. If the user is speaking Hindi/Punjabi,
                </button>
              </div>
              
-             <div className="space-y-4">
-               <div>
-                 <label className="block text-sm font-medium mb-2">User Message Background</label>
-                 <input
-                   type="color"
-                   value={customColors.userMessageBg}
-                   onChange={(e) => updateColor('userMessageBg', e.target.value)}
-                   className="w-full h-10 rounded border"
-                 />
-               </div>
+                           <div className="space-y-3 sm:space-y-4">
+                <div>
+                  <label className="block text-xs sm:text-sm font-medium mb-1 sm:mb-2">User Message Background</label>
+                  <input
+                    type="color"
+                    value={customColors.userMessageBg}
+                    onChange={(e) => updateColor('userMessageBg', e.target.value)}
+                    className="w-full h-8 sm:h-10 rounded border"
+                  />
+                </div>
                
-               <div>
-                 <label className="block text-sm font-medium mb-2">Bot Message Background</label>
-                 <input
-                   type="color"
-                   value={customColors.botMessageBg}
-                   onChange={(e) => updateColor('botMessageBg', e.target.value)}
-                   className="w-full h-10 rounded border"
-                 />
-               </div>
+                               <div>
+                  <label className="block text-xs sm:text-sm font-medium mb-1 sm:mb-2">Bot Message Background</label>
+                  <input
+                    type="color"
+                    value={customColors.botMessageBg}
+                    onChange={(e) => updateColor('botMessageBg', e.target.value)}
+                    className="w-full h-8 sm:h-10 rounded border"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-xs sm:text-sm font-medium mb-1 sm:mb-2">User Avatar Background</label>
+                  <input
+                    type="color"
+                    value={customColors.userAvatarBg}
+                    onChange={(e) => updateColor('userAvatarBg', e.target.value)}
+                    className="w-full h-8 sm:h-10 rounded border"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-xs sm:text-sm font-medium mb-1 sm:mb-2">Bot Avatar Background</label>
+                  <input
+                    type="color"
+                    value={customColors.botAvatarBg}
+                    onChange={(e) => updateColor('botAvatarBg', e.target.value)}
+                    className="w-full h-8 sm:h-10 rounded border"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-xs sm:text-sm font-medium mb-1 sm:mb-2">Send Button Background</label>
+                  <input
+                    type="color"
+                    value={customColors.sendButtonBg}
+                    onChange={(e) => updateColor('sendButtonBg', e.target.value)}
+                    className="w-full h-8 sm:h-10 rounded border"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-xs sm:text-sm font-medium mb-1 sm:mb-2">Header Background</label>
+                  <input
+                    type="color"
+                    value={customColors.headerBg}
+                    onChange={(e) => updateColor('headerBg', e.target.value)}
+                    className="w-full h-8 sm:h-10 rounded border"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-xs sm:text-sm font-medium mb-1 sm:mb-2">Input Background</label>
+                  <input
+                    type="color"
+                    value={customColors.inputBg}
+                    onChange={(e) => updateColor('inputBg', e.target.value)}
+                    className="w-full h-8 sm:h-10 rounded border"
+                  />
+                </div>
                
-               <div>
-                 <label className="block text-sm font-medium mb-2">User Avatar Background</label>
-                 <input
-                   type="color"
-                   value={customColors.userAvatarBg}
-                   onChange={(e) => updateColor('userAvatarBg', e.target.value)}
-                   className="w-full h-10 rounded border"
-                 />
-               </div>
-               
-               <div>
-                 <label className="block text-sm font-medium mb-2">Bot Avatar Background</label>
-                 <input
-                   type="color"
-                   value={customColors.botAvatarBg}
-                   onChange={(e) => updateColor('botAvatarBg', e.target.value)}
-                   className="w-full h-10 rounded border"
-                 />
-               </div>
-               
-               <div>
-                 <label className="block text-sm font-medium mb-2">Send Button Background</label>
-                 <input
-                   type="color"
-                   value={customColors.sendButtonBg}
-                   onChange={(e) => updateColor('sendButtonBg', e.target.value)}
-                   className="w-full h-10 rounded border"
-                 />
-               </div>
-               
-               <div>
-                 <label className="block text-sm font-medium mb-2">Header Background</label>
-                 <input
-                   type="color"
-                   value={customColors.headerBg}
-                   onChange={(e) => updateColor('headerBg', e.target.value)}
-                   className="w-full h-10 rounded border"
-                 />
-               </div>
-               
-               <div>
-                 <label className="block text-sm font-medium mb-2">Input Background</label>
-                 <input
-                   type="color"
-                   value={customColors.inputBg}
-                   onChange={(e) => updateColor('inputBg', e.target.value)}
-                   className="w-full h-10 rounded border"
-                 />
-               </div>
-               
-               <div className="flex space-x-2 pt-4">
-                 <button
-                   onClick={resetColors}
-                   className={`flex-1 px-4 py-2 rounded-lg transition-colors duration-200 ${
-                     isDarkMode 
-                       ? 'bg-gray-700 hover:bg-gray-600 text-white' 
-                       : 'bg-gray-100 hover:bg-gray-200 text-black'
-                   }`}
-                 >
-                   Reset Colors
-                 </button>
-                 <button
-                   onClick={() => setShowColorPicker(false)}
-                   className={`flex-1 px-4 py-2 rounded-lg transition-colors duration-200 ${
-                     isDarkMode 
-                       ? 'bg-gray-700 hover:bg-gray-600 text-white' 
-                       : 'bg-gray-100 hover:bg-gray-200 text-black'
-                   }`}
-                 >
-                   Done
-                 </button>
-               </div>
+                               <div className="flex space-x-2 pt-3 sm:pt-4">
+                  <button
+                    onClick={resetColors}
+                    className={`flex-1 px-3 sm:px-4 py-2 rounded-lg transition-colors duration-200 text-sm sm:text-base ${
+                      isDarkMode 
+                        ? 'bg-gray-700 hover:bg-gray-600 text-white' 
+                        : 'bg-gray-100 hover:bg-gray-200 text-black'
+                    }`}
+                  >
+                    Reset Colors
+                  </button>
+                  <button
+                    onClick={() => setShowColorPicker(false)}
+                    className={`flex-1 px-3 sm:px-4 py-2 rounded-lg transition-colors duration-200 text-sm sm:text-base ${
+                      isDarkMode 
+                        ? 'bg-gray-700 hover:bg-gray-600 text-white' 
+                        : 'bg-gray-100 hover:bg-gray-200 text-black'
+                    }`}
+                  >
+                    Done
+                  </button>
+                </div>
              </div>
            </div>
          </div>
