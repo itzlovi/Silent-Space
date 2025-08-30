@@ -1,9 +1,5 @@
 # 🧠✨ SilentSpace - AI Psychology Chatbot
 
-<div align="center">
-  
-  ![SilentSpace Banner](https://via.placeholder.com/800x200/6366f1/ffffff?text=SilentSpace+AI+Psychology+Chatbot)
-  
   ### *Your Compassionate Digital Companion for Mental Wellness* 🌱
   
   [![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Now-6366f1?style=for-the-badge&labelColor=1e1b4b)](https://silent-space-3mh5ddh0r-lovepreets-projects-7b59e035.vercel.app/)
